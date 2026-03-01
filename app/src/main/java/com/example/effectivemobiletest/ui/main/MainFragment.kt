@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest.ui.notifications
+package com.example.effectivemobiletest.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.effectivemobiletest.databinding.FragmentNotificationsBinding
+import com.example.effectivemobiletest.databinding.FragmentMainBinding
 
-class NotificationsFragment : Fragment() {
+class MainFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentMainBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,15 +22,15 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val mainViewModel =
+            ViewModelProvider(this).get(MainViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val textView: TextView = binding.textHome
+        mainViewModel.text.observe(viewLifecycleOwner) {
+          //  textView.text = it
         }
         return root
     }
