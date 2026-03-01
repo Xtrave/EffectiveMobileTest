@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="dark">#151515</color>
+    <color name="stroke">#4D525D</color>
+    <color name="glass">#32333A</color>
+    <color name="caption">#80989899</color>
     <color name="dark_gray">#24252A</color>
     <color name="light_gray">#32333A</color>
     <color name="green">#12B956</color>
