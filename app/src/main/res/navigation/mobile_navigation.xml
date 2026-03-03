@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.effectivemobiletest.ui.main.MainFragment"
+        android:name="com.example.effectivemobiletest.main.presentation.MainFragment"
         android:label="@string/title_main"
         tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.effectivemobiletest.ui.favorite.FavoriteFragment"
+        android:name="com.example.effectivemobiletest.favorite.presentation.FavoriteFragment"
         android:label="@string/title_favorite"
         tools:layout="@layout/fragment_favorite" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.effectivemobiletest.ui.profile.ProfileFragment"
+        android:name="com.example.effectivemobiletest.profile.presentation.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
