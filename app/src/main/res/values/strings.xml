@@ -4,5 +4,4 @@
     <string name="title_favorite">Избранное</string>
     <string name="title_profile">Аккаунт</string>
     <string name="profile_in_working">Профиль\nВ разработке</string>
-    <string name="favorite_in_working">Здесь пока нет сохраненных курсов</string>
 </resources>
