@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest.ui.main
+package com.example.effectivemobiletest.main.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest.ui.main
+package com.example.effectivemobiletest.main.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.effectivemobiletest.databinding.FragmentMainBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
 
+    private val mainViewModel: MainViewModel by viewModel()
     private var _binding: FragmentMainBinding? = null
 
     // This property is only valid between onCreateView and
