@@ -1,13 +1,13 @@
-package com.example.effectivemobiletest.profile.presentation
+package com.example.effectivemobiletest.main.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ProfileViewModel : ViewModel() {
+internal class MainViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is profile Fragment"
+        value = "This is main Fragment"
     }
     val text: LiveData<String> = _text
 }

@@ -1,13 +1,13 @@
-package com.example.effectivemobiletest.favorite.presentation
+package com.example.effectivemobiletest.profile.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class FavoriteViewModel : ViewModel() {
+internal class ProfileViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is favorite Fragment"
+        value = "This is profile Fragment"
     }
     val text: LiveData<String> = _text
 }
