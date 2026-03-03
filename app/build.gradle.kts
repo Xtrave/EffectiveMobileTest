@@ -42,6 +42,7 @@ dependencies {
 
     implementation(project(":features:main"))
     implementation(project(":features:favorite"))
+    implementation(project(":features:profile"))
     implementation(libs.koin.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

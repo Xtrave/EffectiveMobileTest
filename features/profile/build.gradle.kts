@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.effectivemobiletest.main"
+    namespace = "com.example.effectivemobiletest.profile"
     compileSdk = 36
 
     defaultConfig {
@@ -35,5 +35,4 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-
 }

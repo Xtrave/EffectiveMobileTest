@@ -23,3 +23,4 @@ rootProject.name = "EffectiveMobileTest"
 include(":app")
 include(":features:main")
 include(":features:favorite")
+include(":features:profile")
