@@ -13,6 +13,7 @@ lifecycleViewmodelKtx = "2.10.0"
 navigationFragmentKtx = "2.9.5"
 navigationUiKtx = "2.9.5"
 koin = "4.1.1"
+jetbrainsKotlinJvm = "2.0.21"
 
 [libraries]
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
@@ -32,4 +33,5 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 

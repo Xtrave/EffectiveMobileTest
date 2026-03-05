@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.effectivemobiletest.main"
+    namespace = "com.example.effectivemobiletest.uikit"
     compileSdk = 36
 
     defaultConfig {
@@ -23,18 +23,11 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
 
-    implementation(project(":uiKit"))
-    implementation(libs.koin.android)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-
 }

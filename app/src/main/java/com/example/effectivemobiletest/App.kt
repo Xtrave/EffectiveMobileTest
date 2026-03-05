@@ -2,6 +2,7 @@ package com.example.effectivemobiletest
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.effectivemobiletest.di.navigationModule
 import com.example.effectivemobiletest.favorite.di.favoriteModule
 import com.example.effectivemobiletest.main.di.mainModule
 import com.example.effectivemobiletest.profile.di.profileModule
@@ -16,6 +17,7 @@ class App : Application() {
 
         startKoin {
             androidContext(this@App)
+            modules(navigationModule)
             modules(mainModule)
             modules(favoriteModule)
             modules(profileModule)

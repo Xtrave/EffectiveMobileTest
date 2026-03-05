@@ -2,48 +2,61 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="TitleMedium">
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">Roboto</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">16sp</item>
         <item name="android:lineHeight" tools:targetApi="28">18sp</item>
-        <item name="android:letterSpacing">0.15</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="BodySmall">
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFamily">Roboto</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineHeight" tools:targetApi="28">16sp</item>
-        <item name="android:letterSpacing">0.4</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Button">
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">Roboto</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineHeight" tools:targetApi="28">20sp</item>
-        <item name="android:letterSpacing">0.1</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="ButtonSmall">
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFamily">Roboto</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontWeight" tools:targetApi="26">600</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineHeight" tools:targetApi="28">15sp</item>
-        <item name="android:letterSpacing">0.4</item>
         <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Caption">
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFamily">Roboto</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineHeight" tools:targetApi="28">14sp</item>
-        <item name="android:letterSpacing">0.4</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Headline">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">36sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BodyMedium">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">20sp</item>
+        <item name="android:lineSpacingExtra">8dp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 

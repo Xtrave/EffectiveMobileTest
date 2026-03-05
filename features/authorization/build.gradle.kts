@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.effectivemobiletest.main"
+    namespace = "com.example.effectivemobiletest.authorization"
     compileSdk = 36
 
     defaultConfig {
@@ -32,9 +32,9 @@ dependencies {
 
     implementation(project(":uiKit"))
     implementation(libs.koin.android)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-
 }
