@@ -30,6 +30,7 @@ android {
 
 dependencies {
 
+    implementation(project(":uiKit"))
     implementation(libs.koin.android)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.core.ktx)
