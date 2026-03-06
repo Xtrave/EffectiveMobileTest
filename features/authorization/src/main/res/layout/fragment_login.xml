@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Вход"
+        android:text="@string/enter"
         android:textAppearance="@style/Headline"
         android:layout_marginTop="140dp"
         android:layout_marginBottom="28dp"/>
@@ -16,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/email"
         android:textAppearance="@style/TitleMedium"
         android:layout_marginBottom="8dp"/>
 
@@ -24,7 +25,7 @@
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:hint="example@gmail.com"
+        android:hint="@string/example_gmail"
         android:textAppearance="@style/BodyMedium"
         android:inputType="textEmailAddress"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@._-"
@@ -38,7 +39,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Пароль"
+        android:text="@string/password"
         android:textAppearance="@style/TitleMedium"
         android:layout_marginBottom="8dp"/>
 
@@ -46,7 +47,7 @@
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:hint="Введите пароль"
+        android:hint="@string/enter_password"
         android:textAppearance="@style/BodyMedium"
         android:inputType="textPassword"
         android:maxLines="1"
@@ -60,10 +61,10 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Вход"
+        android:text="@string/enter"
         android:textAppearance="@style/Button"
         android:enabled="false"
-        android:backgroundTint="@color/button_enabled"
+        style ="@drawable/btn_background_selector"
         android:layout_marginBottom="16dp"
         android:gravity="center"/>
 
@@ -77,7 +78,7 @@
             android:id="@+id/noAccountText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Нету аккаунта?"
+            android:text="@string/no_account"
             android:textAppearance="@style/ButtonSmall"
             android:textColor="@color/white"/>
 
@@ -88,7 +89,7 @@
             android:background="?selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
-            android:text=" Регистрация"
+            android:text="@string/registration"
             android:textAppearance="@style/ButtonSmall"
             android:textColor="@color/green"/>
 
@@ -99,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Забыл пароль"
+        android:text="@string/forget_password"
         android:textColor="@color/green"
         android:clickable="true"
         android:focusable="true"

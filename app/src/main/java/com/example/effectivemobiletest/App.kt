@@ -2,6 +2,7 @@ package com.example.effectivemobiletest
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.effectivemobiletest.authorization.di.loginModule
 import com.example.effectivemobiletest.di.navigationModule
 import com.example.effectivemobiletest.favorite.di.favoriteModule
 import com.example.effectivemobiletest.main.di.mainModule
@@ -21,6 +22,7 @@ class App : Application() {
             modules(mainModule)
             modules(favoriteModule)
             modules(profileModule)
+            modules(loginModule)
         }
     }
 }

@@ -1,60 +1,44 @@
 package com.example.effectivemobiletest.authorization.presentation
 
+import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.effectivemobiletest.authorization.data.LoginState
 import java.util.regex.Pattern
 
 class LoginViewModel : ViewModel() {
 
-    private val _email = MutableLiveData("")
-    val email: LiveData<String> = _email
+    private val _state = MutableLiveData(LoginState())
+    val state: LiveData<LoginState> = _state
 
-    private val _password = MutableLiveData("")
-    val password: LiveData<String> = _password
+    fun onEmailChanged(email: String) {
+        val currentState = _state.value ?: LoginState()
+        val updatedState = currentState.copy(email = email)
 
-    private val _isLoginEnabled = MutableLiveData(false)
-    val isLoginEnabled: LiveData<Boolean> = _isLoginEnabled
-
-    private val _navigateToMain = MutableLiveData(false)
-    val navigateToMain: LiveData<Boolean> = _navigateToMain
-
-    fun onEmailChanged(text: String) {
-        _email.value = text
-        validateForm()
+        validateForm(updatedState)
     }
 
-    fun onPasswordChanged(text: String) {
-        _password.value = text
-        validateForm()
+    fun onPasswordChanged(password: String) {
+        val currentState = _state.value ?: LoginState()
+        val updatedState = currentState.copy(password = password)
+
+        validateForm(updatedState)
     }
 
-    private fun validateForm() {
-        val email = _email.value ?: ""
-        val password = _password.value ?: ""
+    private fun validateForm(loginState: LoginState) {
+        val isLoginEnabled = isEmailValid(loginState.email) && isPasswordValid(loginState.password)
 
-        val isEmailValid = isValidEmail(email)
-        val isPasswordValid = password.isNotBlank()
-
-        _isLoginEnabled.value = isEmailValid && isPasswordValid
-    }
-
-    private fun isValidEmail(email: String): Boolean {
-        if (email.isBlank()) return false
-
-        val cyrillicPattern = Pattern.compile("[а-яА-Я]")
-        if (cyrillicPattern.matcher(email).find()) return false
-
-        val emailPattern = Pattern.compile(
-            "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+        _state.value = loginState.copy(
+            isLoginEnabled = isLoginEnabled
         )
-        return emailPattern.matcher(email).matches()
     }
 
-    fun onLoginClick() {
-        if (_isLoginEnabled.value == true) {
-            _navigateToMain.value = true
-            _navigateToMain.value = false
-        }
+    fun isEmailValid(email: String): Boolean {
+        return email.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    fun isPasswordValid(password: String): Boolean {
+        return password.isNotEmpty()
     }
 }
