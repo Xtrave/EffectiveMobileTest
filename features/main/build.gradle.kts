@@ -31,6 +31,14 @@ android {
 dependencies {
 
     implementation(project(":uiKit"))
+    implementation(libs.squareup.okhttp)
+    implementation(libs.squareup.logging.interceptor)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.squareup.retrofit)
+    implementation(libs.squareup.converter.gson)
+    implementation(libs.google.gson)
+    implementation(libs.adapterdelegates.kotlin.dsl)
+    implementation(libs.adapterdelegates.viewbinding)
     implementation(libs.koin.android)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.core.ktx)

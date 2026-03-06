@@ -1,44 +1,63 @@
 package com.example.effectivemobiletest.main.presentation
 
+import android.os.Build
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
+import androidx.annotation.RequiresApi
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.effectivemobiletest.main.databinding.FragmentMainBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.effectivemobiletest.main.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(R.layout.fragment_main) {
 
-    private val mainViewModel: MainViewModel by viewModel()
-    private var _binding: FragmentMainBinding? = null
+    private val viewModel: MainViewModel by viewModel()
+    private val adapter = CourseAdapter()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val mainViewModel =
-            ViewModelProvider(this).get(MainViewModel::class.java)
+        val btnSortByDate = view.findViewById<Button>(R.id.btnSortByDate)
 
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rvCourses)
 
-        val textView: TextView = binding.textHome
-        mainViewModel.text.observe(viewLifecycleOwner) {
-          //  textView.text = it
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
+
+            insets
         }
-        return root
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+
+        btnSortByDate.setOnClickListener {
+            viewModel.sortCoursesByDate()
+        }
+
+        observeState()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun observeState() {
+
+        viewModel.state.observe(viewLifecycleOwner) { state ->
+            when(state){
+                is MainState.Content -> adapter.items = state.course
+                is MainState.Error -> Unit
+                MainState.Loading -> Unit
+            }
+
+        }
     }
 }
